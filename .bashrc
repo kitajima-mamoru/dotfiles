@@ -7,3 +7,4 @@ fi
 
 # User specific aliases and functions
 alias :q='exit'
+alias ll='ls -al'
