@@ -31,7 +31,6 @@ set expandtab
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
-set viminfo=
 set noswapfile
 
 syntax on
@@ -71,3 +70,4 @@ augroup myvimrc
   autocmd!
 augroup END
 autocmd myvimrc filetype nerdtree nnoremap b :<C-u>Bookmark
+execute pathogen#infect()

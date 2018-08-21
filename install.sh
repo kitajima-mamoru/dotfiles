@@ -29,13 +29,36 @@ done
 if [ -e ~/.gitconfig.local ] ;then
   cp ~/dotfiles/.gitconfig.local.template ~/.gitconfig.local
 fi
-# emacs set up
-#if which cask >/dev/null 2>&1; then
-#echo "setup .emacs.d..."
-#cd ${THIS_DIR}/.emacs.d
-#cask upgrade
-#cask install
-#fi
+
+
+#各種バンドルインストール
+if [ -e ~/.vim/bundle/neobundle.vim ]; then
+        rm ~/.vim/bundle/neobundle.vim -rf
+fi
+git clone git@github.com:Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
+
+if [ -e ~/.vim/bundle/unite ]; then
+        rm ~/.vim/bundle/unite -rf
+fi
+git clone git@github.com:Shougo/unite.vim.git ~/.vim/bundle/unite
+
+if [ -e ~/.vim/bundle/nerdtree ]; then
+        rm ~/.vim/bundle/nerdtree -rf
+fi
+git clone git@github.com:scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+
+if [ -e ~/.vim/bundle/vim-colorschemes ]; then
+        rm ~/.vim/bundle/vim-colorschemes -rf
+fi
+git clone git@github.com:flazz/vim-colorschemes.git ~/.vim/bundle/vim-colorschemes
+
+if [ -e ~/.vim/bundle/unite-colorschemes ]; then
+        rm ~/.vim/bundle/unite-colorschemes -rf
+fi
+git clone git@github.com:ujihisa/unite-colorscheme.git ~/.vim/bundle/unite-colorschemes
+
+curl --create-dirs -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+#ln -snfv ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors
 
 cat << END
 
