@@ -13,6 +13,8 @@
   lp = log -p
   ls = log --stat
   ba = branch -a
+  cm = commit -m
+  po = push origin
   p = pull
   b = branch
   l = log
