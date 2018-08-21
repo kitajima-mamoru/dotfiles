@@ -3,15 +3,6 @@ if 0 | endif
 if &compatible
   set nocompatible
 endif
-set runtimepath+=/home/$USER/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('/home/$USER/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/vimfiler.git'
-  NeoBundle 'scrooloose/nerdtree.git'
-  NeoBundle 'flazz/vim-colorschemes'
-  NeoBundle 'ujihisa/unite-colorscheme' " :Unite -auto-preview colorscheme
-call neobundle#end()
 
 colorscheme 3dglasses
   filetype plugin indent on
@@ -71,3 +62,4 @@ augroup myvimrc
 augroup END
 autocmd myvimrc filetype nerdtree nnoremap b :<C-u>Bookmark
 execute pathogen#infect()
+ln -snfv ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors

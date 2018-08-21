@@ -32,11 +32,6 @@ fi
 
 
 #各種バンドルインストール
-if [ -e ~/.vim/bundle/neobundle.vim ]; then
-        rm ~/.vim/bundle/neobundle.vim -rf
-fi
-git clone git@github.com:Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
-
 if [ -e ~/.vim/bundle/unite ]; then
         rm ~/.vim/bundle/unite -rf
 fi
@@ -58,7 +53,7 @@ fi
 git clone git@github.com:ujihisa/unite-colorscheme.git ~/.vim/bundle/unite-colorschemes
 
 curl --create-dirs -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-#ln -snfv ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors
+ln -snfv ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors
 
 cat << END
 
