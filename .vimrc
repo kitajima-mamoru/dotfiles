@@ -62,4 +62,3 @@ augroup myvimrc
 augroup END
 autocmd myvimrc filetype nerdtree nnoremap b :<C-u>Bookmark
 execute pathogen#infect()
-ln -snfv ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors
