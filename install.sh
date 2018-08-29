@@ -26,11 +26,6 @@ for f in .??*; do
   ln -snfv $THIS_DIR/"$f" ~/$f
 done
 
-if [ -e ~/.gitconfig.local ] ;then
-  cp ~/dotfiles/.gitconfig.local.template ~/.gitconfig.local
-fi
-
-
 #各種バンドルインストール
 if [ -e ~/.vim/bundle/unite ]; then
         rm ~/.vim/bundle/unite -rf
