@@ -6,5 +6,6 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-alias :q='exit'
 alias ll='ls -al'
+alias :q='exit'
+alias :g='grep -r --exclude=tags'

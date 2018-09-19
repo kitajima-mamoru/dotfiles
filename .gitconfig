@@ -15,7 +15,7 @@
   ba = branch -a
   cm = commit -m
   po = push origin
-  p = pull
+  pp = pull --prune
   b = branch
   l = log
   d = diff
