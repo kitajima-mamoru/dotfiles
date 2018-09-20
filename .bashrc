@@ -9,3 +9,4 @@ fi
 alias ll='ls -al'
 alias :q='exit'
 alias :g='grep -r --exclude=tags'
+alias :w='git clone git@github.com:kitajima-mamoru/dotfiles.git'
