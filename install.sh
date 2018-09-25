@@ -42,6 +42,11 @@ if [ -e ~/.vim/bundle/vim-colorschemes ]; then
 fi
 git clone git@github.com:flazz/vim-colorschemes.git ~/.vim/bundle/vim-colorschemes
 
+if [ -e ~/.vim/bundle/winresizer ]; then
+        rm ~/.vim/bundle/winresizer -rf
+fi
+git clone git@github.com:simeji/winresizer.git ~/.vim/bundle/winresizer
+
 if [ -e ~/.vim/bundle/unite-colorschemes ]; then
         rm ~/.vim/bundle/unite-colorschemes -rf
 fi
