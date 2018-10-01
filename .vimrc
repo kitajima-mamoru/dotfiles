@@ -5,13 +5,12 @@ if &compatible
 endif
 
 colorscheme 3dglasses
-  filetype plugin indent on
+filetype plugin indent on
 
 set t_Co=256
 set hidden
 set ignorecase
-set number
-set list
+set number list
 set showcmd
 set laststatus=2
 set showmatch
@@ -40,11 +39,15 @@ nnoremap <Space>s. :<C-u>source $HOME/.vimrc<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <F8> :NERDTreeFind<CR>
 nnoremap <C-n> gt
-nnoremap <C-p> gT
 nnoremap <C-h> :<C-u>vertical diffsplit<Space>
 nnoremap <C-p> :<C-u>echo expand("%:p")<Space>
 nnoremap <C-k> :<C-u>call delete(expand('%'))<Space>
 nnoremap - $
+nnoremap <F10> :<C-u>browse oldfiles<CR>
+nnoremap <F1> :<C-u>set nolist nonumber<CR>
+nnoremap <F2> :<C-u>set list number<CR>
+"new tabe tagjump
+nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 "自動起動
 autocmd StdinReadPre * let s:std_in=1
@@ -53,7 +56,7 @@ augroup myvimrc
   autocmd!
 augroup END
 autocmd myvimrc filetype nerdtree nnoremap b :<C-u>Bookmark
-:set clipboard=autoselect
+set clipboard=autoselect
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
@@ -73,8 +76,4 @@ call NERDTreeHighlightFile('rb',     'Red',     'none', 'red','#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500','#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff','#151515')
    
-augroup myvimrc
-  autocmd!
-augroup END
-autocmd myvimrc filetype nerdtree nnoremap b :<C-u>Bookmark
 execute pathogen#infect()
