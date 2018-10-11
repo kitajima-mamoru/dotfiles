@@ -16,6 +16,7 @@ set laststatus=2
 set showmatch
 set matchtime=2
 set autoindent
+set shiftwidth=4
 set tabstop=2
 set expandtab
 set encoding=utf-8
@@ -48,6 +49,7 @@ nnoremap <F1> :<C-u>set nolist nonumber<CR>
 nnoremap <F2> :<C-u>set list number<CR>
 "new tabe tagjump
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+nnoremap <silent> <F4> oERROR_LOG(var_export($,true));<ESC>7hi
 
 "自動起動
 autocmd StdinReadPre * let s:std_in=1
