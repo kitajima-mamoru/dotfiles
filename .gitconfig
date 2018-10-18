@@ -22,3 +22,4 @@
   d = diff
   a = add -p
   c = commit -v
+  rh = reset --hard

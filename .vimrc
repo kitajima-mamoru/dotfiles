@@ -49,8 +49,11 @@ nnoremap <F1> :<C-u>set nolist nonumber<CR>
 nnoremap <F2> :<C-u>set list number<CR>
 "new tabe tagjump
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-nnoremap <silent> <F4> oERROR_LOG(var_export($,true));<ESC>7hi
+nnoremap <silent> <F4> o<ESC>0iERROR_LOG(var_export($,true));<ESC>7hi
+nnoremap <silent> <F5> o<ESC>0iERROR_LOG(var_export(__FILE__,true));<ESC>
 
+
+:command V tabe ~/.vimrc
 "自動起動
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
