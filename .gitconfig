@@ -6,6 +6,7 @@
   s = status
   pr = pull -rebase
   co = checkout
+  cod = checkout develop
   fo = fetch origin
   ro = rebase origin
   dw = diff --word-diff
@@ -16,6 +17,7 @@
   cm = commit -m
   po = push origin
   poh = push origin HEAD
+  pfoh = push -f origin HEAD
   pp = pull --prune
   b = branch
   l = log
