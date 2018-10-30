@@ -62,4 +62,3 @@ DOTFILES SETUP FINISHED! bye.
 **************************************************
 
 END
-#git clone git@github.com:universal-ctags/ctags.git
