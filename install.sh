@@ -22,6 +22,7 @@ for f in .??*; do
   [ "$f" = ".gitconfig.local.template" ] && continue
   [ "$f" = ".require_oh-my-zsh" ] && continue
   [ "$f" = ".gitmodules" ] && continue
+  [ "$f" = ".vimrc" ] && ln -snfv $THIS_DIR/"$f" ~/.vim/vimrc
   
   ln -snfv $THIS_DIR/"$f" ~/$f
 done
