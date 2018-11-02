@@ -29,11 +29,18 @@ done
 if [ ! -e ~/.vim ]; then
   mkdir ~/.vim
 fi
+ln -snfv $THIS_DIR/vimrc ~/.vim/vimrc
 if [ ! -e ~/.vim/rc ]; then
   mkdir ~/.vim/rc
 fi
-ln -snfv $THIS_DIR/vimrc ~/.vim/vimrc
-ln -snfv $THIS_DIR/rc/init ~/.vim/rc/init
+if [ ! -e ~/.vim/rc/pri ]; then
+  mkdir ~/.vim/rc/pri
+fi
+if [ -e ~/.vim/rc/init ]; then
+  rm ~/.vim/rc/init -rf
+fi
+ln -snfv $THIS_DIR/rc/init ~/.vim/rc/
+cp $THIS_DIR/rc/pri ~/.vim/rc/ -rf
 #各種バンドルインストール
 if [ -e ~/.vim/bundle/unite ]; then
         rm ~/.vim/bundle/unite -rf
@@ -61,7 +68,7 @@ fi
 git clone git@github.com:ujihisa/unite-colorscheme.git ~/.vim/bundle/unite-colorschemes
 
 curl --create-dirs -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-ln -snfv ~/.vim/bundle/vim-colorschemes/colors ~/.vim/colors
+ln -snfv ~/.vim/bundle/vim-colorschemes/colors ~/.vim/
 
 cat << END
 

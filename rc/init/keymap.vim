@@ -1,4 +1,4 @@
-nnoremap <Space>s. :<C-u>source $HOME/.vimrc<CR>
+nnoremap <Space>s. :<C-u>source $HOME/.vim/vimrc<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <F8> :NERDTreeFind<CR>
 nnoremap <C-n> gt
