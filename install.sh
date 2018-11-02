@@ -22,11 +22,18 @@ for f in .??*; do
   [ "$f" = ".gitconfig.local.template" ] && continue
   [ "$f" = ".require_oh-my-zsh" ] && continue
   [ "$f" = ".gitmodules" ] && continue
-  [ "$f" = ".vimrc" ] && ln -snfv $THIS_DIR/"$f" ~/.vim/vimrc
   
   ln -snfv $THIS_DIR/"$f" ~/$f
 done
 
+if [ ! -e ~/.vim ]; then
+  mkdir ~/.vim
+fi
+if [ ! -e ~/.vim/rc ]; then
+  mkdir ~/.vim/rc
+fi
+ln -snfv $THIS_DIR/vimrc ~/.vim/vimrc
+ln -snfv $THIS_DIR/rc/init ~/.vim/rc/init
 #各種バンドルインストール
 if [ -e ~/.vim/bundle/unite ]; then
         rm ~/.vim/bundle/unite -rf
