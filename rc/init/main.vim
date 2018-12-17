@@ -24,6 +24,7 @@ set termencoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,sjis
 set noswapfile
 set clipboard=autoselect
+set virtualedit=onemore
 syntax on
 
 :command V tabe ~/.vim/rc

@@ -7,7 +7,7 @@ nnoremap <C-h> :<C-u>vertical diffsplit<Space>
 nnoremap <C-p> :<C-u>echo expand("%:p")<Space>
 nnoremap <C-k> :<C-u>call delete(expand('%'))<Space>
 nnoremap - $
-nnoremap <F10> :<C-u>tabe<CR>:browse oldfiles<CR>
+nnoremap <F10> :<C-u>tabe<CR>:browse filter /\./oldfiles<CR>
 nnoremap <F1> :<C-u>set list! number!<CR>
 nnoremap <F2> :set hlsearch!<CR>
 "new tabe tagjump

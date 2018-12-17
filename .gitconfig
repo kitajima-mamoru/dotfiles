@@ -25,3 +25,4 @@
   a = add -p
   c = commit -v
   rh = reset --hard
+  bas = for-each-ref --format='%(authordate) %(refname)' --sort=-committerdate refs/heads refs/remotes
