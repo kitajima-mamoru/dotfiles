@@ -35,3 +35,7 @@ function! s:get_syn_info()
         \ " guibg: " . linkedSyn.guibg
 endfunction
 command! SyntaxInfo call s:get_syn_info()
+
+"line hilight
+set cursorline
+hi CursorLineNr term=bold cterm=NONE ctermfg=130 ctermbg=130
