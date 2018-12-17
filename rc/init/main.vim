@@ -33,3 +33,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 execute pathogen#infect()
+
+"line hilight
+set cursorline
+hi CursorLineNr term=bold cterm=NONE ctermfg=130 ctermbg=130
