@@ -16,7 +16,7 @@ set laststatus=2
 set showmatch
 set matchtime=2
 set autoindent
-set shiftwidth=4
+set shiftwidth=2
 set tabstop=2
 set expandtab
 set encoding=utf-8
@@ -34,6 +34,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 execute pathogen#infect()
 
-"line hilight
+
 set cursorline
-hi CursorLineNr term=bold cterm=NONE ctermfg=130 ctermbg=130
+hi CursorLineNr term=bold   cterm=NONE ctermfg=1 ctermbg=NONE
+hi clear CursorLine
