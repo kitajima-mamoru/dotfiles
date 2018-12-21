@@ -25,6 +25,7 @@ set fileencodings=utf-8,cp932,euc-jp,sjis
 set noswapfile
 set clipboard=autoselect
 set virtualedit=onemore
+set viminfo='30,
 syntax on
 
 :command V tabe ~/.vim/rc
