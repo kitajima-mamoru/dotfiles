@@ -42,6 +42,11 @@ fi
 ln -snfv $THIS_DIR/rc/init ~/.vim/rc/
 cp $THIS_DIR/rc/pri ~/.vim/rc/ -rf
 #各種バンドルインストール
+
+
+if [ $# -ne 0 ]; then
+  exit 1
+fi
 if [ -e ~/.vim/bundle/unite ]; then
         rm ~/.vim/bundle/unite -rf
 fi
