@@ -2,7 +2,7 @@ nnoremap <Space>s. :<C-u>source $HOME/.vim/vimrc<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <F8> :NERDTreeFind<CR>
 nnoremap <C-n> gt
-nnoremap <C-m> gT
+nnoremap <C-b> gT
 nnoremap <C-h> :<C-u>vertical diffsplit<Space>
 nnoremap <C-p> :<C-u>echo expand("%:p")<Space>
 nnoremap <C-k> :<C-u>call delete(expand('%'))<Space>
