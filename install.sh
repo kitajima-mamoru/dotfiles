@@ -25,7 +25,7 @@ for f in .??*; do
   
   ln -snfv $THIS_DIR/"$f" ~/$f
 done
-
+set -x
 if [ ! -e ~/.vim ]; then
   mkdir ~/.vim
 fi
@@ -39,6 +39,9 @@ fi
 if [ ! -e ~/.vim/undo ]; then
   mkdir ~/.vim/undo
 fi
+if [ ! -e ~/.vim/.session ]; then
+  touch ~/.vim/.session
+fi
 if [ -e ~/.vim/rc/init ]; then
   rm ~/.vim/rc/init -rf
 fi
@@ -46,6 +49,7 @@ ln -snfv $THIS_DIR/rc/init ~/.vim/rc/
 cp $THIS_DIR/rc/pri ~/.vim/rc/ -rf
 #各種バンドルインストール
 
+set +x
 
 if [ $# -ne 0 ]; then
   exit 1
