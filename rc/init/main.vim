@@ -25,16 +25,20 @@ set fileencodings=utf-8,cp932,euc-jp,sjis
 set noswapfile
 set clipboard=autoselect
 set virtualedit=onemore
-set viminfo='30,
+set viminfo='30,r~/NERD,
 syntax on
 
 :command V tabe ~/.vim/rc
-"自動起動
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | source ~/.vim/.session | endif
 
 execute pathogen#infect()
 
+
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
 
 set cursorline
 hi CursorLineNr term=bold   cterm=NONE ctermfg=1 ctermbg=NONE

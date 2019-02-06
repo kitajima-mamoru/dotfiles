@@ -36,6 +36,9 @@ fi
 if [ ! -e ~/.vim/rc/pri ]; then
   mkdir ~/.vim/rc/pri
 fi
+if [ ! -e ~/.vim/undo ]; then
+  mkdir ~/.vim/undo
+fi
 if [ -e ~/.vim/rc/init ]; then
   rm ~/.vim/rc/init -rf
 fi

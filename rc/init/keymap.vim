@@ -15,3 +15,4 @@ nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <silent> <F4> o<ESC>0iERROR_LOG(var_export($,true));<ESC>7hi
 nnoremap <silent> <F5> o<ESC>0iERROR_LOG(var_export(__FILE__,true));<ESC>
 nnoremap <F6> :Unite -auto-preview colorscheme<CR>
+nnoremap <F12> :mks! ~/.vim/.session
