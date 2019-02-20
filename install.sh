@@ -52,6 +52,13 @@ cp $THIS_DIR/rc/pri ~/.vim/rc/ -rf
 set +x
 
 if [ $# -ne 0 ]; then
+cat << END
+
+**************************************************
+FINISHED! bye.(exclude ~/.vim/bundle)
+**************************************************
+
+END
   exit 1
 fi
 if [ -e ~/.vim/bundle/unite ]; then
