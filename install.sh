@@ -39,6 +39,9 @@ fi
 if [ ! -e ~/.vim/undo ]; then
   mkdir ~/.vim/undo
 fi
+if [ ! -e ~/.vim/syntax ]; then
+  mkdir ~/.vim/syntax
+fi
 if [ ! -e ~/.vim/.session ]; then
   touch ~/.vim/.session
 fi
@@ -61,6 +64,16 @@ FINISHED! bye.(exclude ~/.vim/bundle)
 END
   exit 1
 fi
+
+if [ ! -e ~/.vim/syntax/jinja.vim ]; then
+  wget -O ~/.vim/syntax/jinja.vim http://www.vim.org/scripts/download_script.php?src_id=8666
+fi
+
+if [ ! -e ~/.vim/syntax/twig.vim ]; then
+  wget -O ~/.vim/syntax/twig.vim http://www.vim.org/scripts/download_script.php?src_id=6961
+fi
+
+
 if [ -e ~/.vim/bundle/unite ]; then
         rm ~/.vim/bundle/unite -rf
 fi
