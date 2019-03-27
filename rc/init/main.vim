@@ -26,6 +26,7 @@ set noswapfile
 set clipboard=autoselect
 set virtualedit=onemore
 set viminfo='30,r~/NERD,
+set nocursorline
 syntax on
 
 :command V tabe ~/.vim/rc
@@ -40,6 +41,3 @@ if has('persistent_undo')
   set undofile
 endif
 
-set cursorline
-hi CursorLineNr term=bold   cterm=NONE ctermfg=1 ctermbg=NONE
-hi clear CursorLine

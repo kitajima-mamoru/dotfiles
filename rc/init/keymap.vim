@@ -17,3 +17,4 @@ nnoremap <silent> <F5> o<ESC>0iERROR_LOG(var_export(__FILE__,true).var_export(__
 nnoremap <silent> <F7> o<ESC>0iERROR_LOG(var_export(get_class() === get_class($this) ? "ParentClass" : "ChildClass",true));<ESC>
 nnoremap <F6> :Unite -auto-preview colorscheme<CR>
 nnoremap <F12> :mks! ~/.vim/.session
+nnoremap <C-i> :%s/\n\s*//g<CR>:%s/></>\r</g<CR>:filetype indent on<CR>:setf xml<CR>:normal gg=G<CR>:setf twig<CR>
