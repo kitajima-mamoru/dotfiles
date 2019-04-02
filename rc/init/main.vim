@@ -28,9 +28,9 @@ set virtualedit=onemore
 set viminfo='30,r~/NERD,
 syntax on
 
-:command V tabe ~/.vim/rc
+:command! V tabe ~/.vim/rc
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | source ~/.vim/.session | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | source ~/.vim/.session | source $HOME/.vim/vimrc |endif
 
 execute pathogen#infect()
 
