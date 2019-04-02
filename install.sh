@@ -54,7 +54,7 @@ cp $THIS_DIR/rc/pri ~/.vim/rc/ -rf
 
 set +x
 
-if [ $# -ne 0 ]; then
+if [ ! $# -ne 0 ]; then
 cat << END
 
 **************************************************
