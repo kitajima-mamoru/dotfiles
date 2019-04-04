@@ -9,7 +9,7 @@ nnoremap <C-k> :<C-u>call delete(expand('%'))<Space>
 nnoremap - $
 nnoremap <F10> :<C-u>tabe<CR>:browse filter /\./oldfiles<CR>
 nnoremap <F1> :<C-u>set list! number!<CR>
-nnoremap <F2> :set hlsearch!<CR>
+nnoremap <F2> :set hlsearch!<CR>:set cursorcolumn!<CR>
 "new tabe tagjump
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <silent> <F4> o<ESC>0iERROR_LOG(var_export($,true));<ESC>7hi
@@ -18,3 +18,7 @@ nnoremap <silent> <F7> o<ESC>0iERROR_LOG(var_export(get_class() === get_class($t
 nnoremap <F6> :Unite -auto-preview colorscheme<CR>
 nnoremap <F12> :mks! ~/.vim/.session
 nnoremap <C-i> :%s/\n\s*//g<CR>:%s/></>\r</g<CR>:filetype indent on<CR>:setf xml<CR>:normal gg=G<CR>:setf twig<CR>
+nnoremap < :cprevious<CR>   "前へ
+nnoremap > :cnext<CR>       " 次へ
+nnoremap g< :<C-u>cfirst<CR> " 最初へ
+nnoremap g> :<C-u>clast<CR>  " 最後へ

@@ -43,3 +43,4 @@ endif
 set cursorline
 hi clear CursorLine
 hi CursorLineNr term=bold   cterm=NONE ctermfg=10 ctermbg=15
+set cursorcolumn
