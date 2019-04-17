@@ -7,6 +7,7 @@
   pr = pull -rebase
   co = checkout
   cod = checkout develop
+  com = checkout master
   fo = fetch origin
   ro = rebase origin
   dw = diff --word-diff
