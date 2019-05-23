@@ -30,5 +30,5 @@
   rc = rebase --continue
   bas = for-each-ref --format='%(authordate) %(refname)' --sort=-committerdate refs/heads refs/remotes
 [user]
-  name = name
+  name = kitajima
   email = email
