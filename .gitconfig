@@ -28,6 +28,7 @@
   rh = reset --hard
   rs = reset --soft HEAD~1
   rc = rebase --continue
+  md = merge develop
   bas = for-each-ref --format='%(authordate) %(refname)' --sort=-committerdate refs/heads refs/remotes
 [user]
   name = kitajima
