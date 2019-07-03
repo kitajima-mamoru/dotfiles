@@ -13,7 +13,7 @@ nnoremap <F2> :set hlsearch!<CR>:set cursorcolumn!<CR>
 "new tabe tagjump
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <silent> <F4> o<ESC>0iERROR_LOG(var_export($,true));<ESC>7hi
-nnoremap <silent> <F5> o<ESC>0iERROR_LOG(var_export(__FILE__,true).var_export(__FUNCTION__,true));<ESC>
+nnoremap <silent> <F5> o<ESC>0iERROR_LOG(__FILE__.":".__FUNCTION__.":L".__LINE__);<ESC>
 nnoremap <silent> <F7> o<ESC>0iERROR_LOG(var_export(get_class_methods(get_class($)),true));<ESC>9hi
 nnoremap <F6> :Unite -auto-preview colorscheme<CR>
 nnoremap <F11> :source ~/.vim/.session
