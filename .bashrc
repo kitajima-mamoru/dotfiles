@@ -7,6 +7,7 @@ fi
 
 # User specific aliases and functions
 alias ls='ls --color=auto'
+alias vi='vim'
 alias grep='grep --color=auto'
 alias ll='ls -al'
 alias :q='exit'
