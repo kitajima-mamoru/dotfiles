@@ -52,6 +52,7 @@ ln -snfv $THIS_DIR/rc/init ~/.vim/rc/
 cp $THIS_DIR/rc/pri ~/.vim/rc/ -rf
 #各種バンドルインストール
 
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 set +x
 
 if [ ! $# -ne 0 ]; then
