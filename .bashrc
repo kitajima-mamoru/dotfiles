@@ -34,3 +34,4 @@ function promps {
   PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${BLUE}\W${GREEN}\$(parse_git_branch)${BLUE}\$${WHITE} "
 }
 promps
+source ~/.git-completion.bash
