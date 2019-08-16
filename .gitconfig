@@ -2,29 +2,16 @@
   diff = auto
   ui = true
 [alias]
-  st = status -sb
   s = status
-  pr = pull -rebase
   co = checkout
   cod = checkout develop
   com = checkout master
-  fo = fetch origin
-  ro = rebase origin
-  dw = diff --word-diff
-  lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
-  lp = log -p
-  ls = log --stat
-  ba = branch -a
   cm = commit -m
   po = push origin
   poh = push origin HEAD
   pfoh = push -f origin HEAD
   pp = pull --prune
   b = branch
-  l = log
-  d = diff
-  a = add -p
-  c = commit -v
   rh = reset --hard
   rs = reset --soft HEAD~1
   rc = rebase --continue
