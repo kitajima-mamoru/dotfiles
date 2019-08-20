@@ -4,7 +4,7 @@ nnoremap <C-n> gt
 nnoremap <C-b> gT
 nnoremap <C-h> :<C-u>vertical diffsplit<Space>
 nnoremap - $
-nnoremap <F10> :<C-u>tabe<CR>:browse filter /\./oldfiles<CR>
+nnoremap <F10> :<C-u>tabe<CR>:browse filter /\./ oldfiles<CR>
 nnoremap <F1> :<C-u>set list! number!<CR>
 nnoremap <F2> :set hlsearch!<CR>:set cursorcolumn!<CR>
 "new tabe tagjump
@@ -16,7 +16,5 @@ nnoremap <F6> :Unite -auto-preview colorscheme<CR>
 nnoremap <F11> :source ~/.vim/.session
 nnoremap <F12> :mks! ~/.vim/.session
 nnoremap <C-i> :%s/\n\s*//g<CR>:%s/></>\r</g<CR>:filetype indent on<CR>:setf xml<CR>:normal gg=G<CR>:setf twig<CR>
-nnoremap < :cprevious<CR>   "前へ
-nnoremap > :cnext<CR>       " 次へ
-nnoremap g< :<C-u>cfirst<CR> " 最初へ
-nnoremap g> :<C-u>clast<CR>  " 最後へ
+nnoremap g< :cprevious<CR>   "前へ
+nnoremap g> :cnext<CR>       " 次へ
