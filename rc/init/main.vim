@@ -44,3 +44,21 @@ set cursorline
 hi clear CursorLine
 hi CursorLineNr term=bold cterm=NONE ctermfg=10 ctermbg=15
 set nocursorcolumn
+
+"oldfilesFilter
+:command! -nargs=* O call OldfilesFilter(<f-args>)
+function! OldfilesFilter(...)
+  tabe
+  if a:0==0
+    let cmd = 'browse oldfiles'
+  else
+    let cmd = 'browse '
+    let wordlist = a:000
+    for word in wordlist
+      let cmd = cmd.'filter /'.word.'/ '
+    endfor
+    let cmd = cmd.'oldfiles'
+  end
+  execute(cmd)
+  echo cmd
+endfunction
