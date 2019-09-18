@@ -60,5 +60,4 @@ function! OldfilesFilter(...)
     let cmd = cmd.'oldfiles'
   end
   execute(cmd)
-  echo cmd
 endfunction
