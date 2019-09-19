@@ -7,6 +7,7 @@ endif
 colorscheme 3dglasses
 filetype plugin indent on
 
+set tags=./tags,tags,$HOME;
 set t_Co=256
 set hidden
 set ignorecase
