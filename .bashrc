@@ -30,7 +30,7 @@ function promps {
     xterm*) TITLEBAR='\[\e]0;\W\007\]';;
     *)      TITLEBAR="";;
   esac
-  local BASE="\u@\h"
+  [ $LOCALBASE ] && local BASE=$LOCALBASE || local BASE="\u@\h"
   PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${BLUE}\W${GREEN}\$(parse_git_branch)${BLUE}\$${WHITE} "
 }
 promps

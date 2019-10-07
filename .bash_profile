@@ -1,6 +1,6 @@
 # .bash_profile
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+if [ -f ~/.bashrcp ]; then
+  . ~/.bashrcp
 fi
 
 # User specific environment and startup programs
@@ -11,6 +11,6 @@ export PATH
 
 export LANG=ja_JP.UTF-8
 
-if [ -f ~/.bashrcp ]; then
-  . ~/.bashrcp
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
 fi
