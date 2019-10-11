@@ -33,6 +33,11 @@ syntax on
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | source ~/.vim/.session | source $HOME/.vim/vimrc |endif
 
+augroup fileTypeIndent
+  autocmd!
+  autocmd BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
+
 execute pathogen#infect()
 
 
