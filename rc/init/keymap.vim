@@ -1,4 +1,6 @@
 nnoremap <Space>s. :<C-u>source $HOME/.vim/vimrc<CR>
+nnoremap <Space>i. :%s/\n\s*//g<CR>:%s/></>\r</g<CR>:filetype indent on<CR>:setf xml<CR>:normal gg=G<CR>:setf twig<CR>
+nnoremap <Space>c. :Unite -auto-preview colorscheme<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <C-n> gt
 nnoremap <C-b> gT
@@ -8,10 +10,8 @@ nnoremap <F1> :<C-u>set list! number!<CR>
 nnoremap <F2> :set hlsearch!<CR>
 "new tabe tagjump
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-nnoremap <F6> :Unite -auto-preview colorscheme<CR>
 nnoremap <F11> :source ~/.vim/.session
 nnoremap <F12> :mks! ~/.vim/.session
-nnoremap <Space>. :%s/\n\s*//g<CR>:%s/></>\r</g<CR>:filetype indent on<CR>:setf xml<CR>:normal gg=G<CR>:setf twig<CR>
 nnoremap g< :cprevious<CR>   "前へ
 nnoremap g> :cnext<CR>       " 次へ
 
