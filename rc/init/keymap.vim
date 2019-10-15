@@ -15,7 +15,9 @@ nnoremap <F12> :mks! ~/.vim/.session
 nnoremap g< :cprevious<CR>   "前へ
 nnoremap g> :cnext<CR>       " 次へ
 
-autocmd FileType php nnoremap <buffer> <silent> <F4> o<ESC>0iERROR_LOG(var_export($,true));<ESC>7hi
-autocmd FileType php nnoremap <buffer> <silent> <F5> o<ESC>0iERROR_LOG(__FILE__.":".__FUNCTION__.":".__CLASS__.":L".__LINE__);<ESC>
-autocmd FileType php nnoremap <buffer> <silent> <F7> o<ESC>0iERROR_LOG(var_export(get_class_methods(get_class($)),true));<ESC>9hi
-autocmd FileType php nnoremap <buffer> <silent> <F8> o<ESC>0iERROR_LOG(get_class() === get_class($this) ? "ParentClass" : "ChildClass");<ESC>
+autocmd FileType php  nnoremap <buffer> <silent> <F4> o<ESC>0iERROR_LOG(var_export($,true));<ESC>7hi
+autocmd FileType php  nnoremap <buffer> <silent> <F5> o<ESC>0iERROR_LOG(__FILE__.":".__FUNCTION__.":".__CLASS__.":L".__LINE__);<ESC>
+autocmd FileType php  nnoremap <buffer> <silent> <F7> o<ESC>0iERROR_LOG(var_export(get_class_methods(get_class($)),true));<ESC>9hi
+autocmd FileType php  nnoremap <buffer> <silent> <F8> o<ESC>0iERROR_LOG(get_class() === get_class($this) ? "ParentClass" : "ChildClass");<ESC>
+
+autocmd FileType ruby nnoremap <buffer> <silent> <F4> o<ESC>0iLogger.new('./forDebug').debug()<ESC>i
