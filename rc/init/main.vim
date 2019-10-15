@@ -18,7 +18,7 @@ set showmatch
 set matchtime=2
 set autoindent
 set shiftwidth=2
-set tabstop=2
+set tabstop=2 softtabstop=2
 set expandtab
 set encoding=utf-8
 set termencoding=utf-8
@@ -29,17 +29,12 @@ set virtualedit=onemore
 set viminfo='50,r~/NERD,
 syntax on
 
-:command! V tabe ~/.vim/rc
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | source ~/.vim/.session | source $HOME/.vim/vimrc |endif
-
-augroup fileTypeIndent
-  autocmd!
-  autocmd BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
-augroup END
+autocmd FileType php  setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType twig setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 execute pathogen#infect()
-
 
 if has('persistent_undo')
   set undodir=~/.vim/undo
@@ -50,20 +45,3 @@ set cursorline
 hi clear CursorLine
 hi CursorLineNr term=bold cterm=NONE ctermfg=10 ctermbg=15
 set nocursorcolumn
-
-"oldfilesFilter
-:command! -nargs=* O call OldfilesFilter(<f-args>)
-function! OldfilesFilter(...)
-  tabe
-  if a:0==0
-    let cmd = 'browse oldfiles'
-  else
-    let cmd = 'browse '
-    let wordlist = a:000
-    for word in wordlist
-      let cmd = cmd.'filter /'.word.'/ '
-    endfor
-    let cmd = cmd.'oldfiles'
-  end
-  execute(cmd)
-endfunction
