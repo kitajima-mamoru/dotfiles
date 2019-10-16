@@ -24,3 +24,4 @@
 #git管理しないファイルを指定するファイル
 [core]
   excludesfile = ~/.gitignorep
+	editor = vim
