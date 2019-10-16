@@ -4,7 +4,7 @@
 function! OldfilesFilter(...)
   tabe
   if a:0==0
-    let cmd = 'browse oldfiles'
+    let cmd = 'browse filter! /\.git/ oldfiles'
   else
     let cmd = 'browse '
     let wordlist = a:000
