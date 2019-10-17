@@ -33,6 +33,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | source ~/.vim/.session | source $HOME/.vim/vimrc |endif
 autocmd FileType php  setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType twig setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd FileType xml setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 execute pathogen#infect()
 
@@ -45,3 +46,10 @@ set cursorline
 hi clear CursorLine
 hi CursorLineNr term=bold cterm=NONE ctermfg=10 ctermbg=15
 set nocursorcolumn
+
+
+"自動補完
+set completeopt=menuone
+for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
+  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+endfor
