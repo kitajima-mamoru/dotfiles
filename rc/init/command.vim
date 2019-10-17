@@ -10,7 +10,7 @@ function! OldfilesFilter(...)
     let wordlist = a:000
     for word in wordlist
       let replaced = substitute(word, '\.', '\\\.', "g")
-      let cmd = cmd.'filter /\c'.replaced.'/ '
+      let cmd = cmd.'filter /\c'.replaced.'[^\/]*$/ '
     endfor
     let cmd = cmd.'oldfiles'
   end
