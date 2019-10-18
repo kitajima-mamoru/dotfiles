@@ -25,3 +25,6 @@
 [core]
   excludesfile = ~/.gitignorep
   editor = vim
+[credential]
+  helper = !aws --region us-east-1 --profile for_codecommit codecommit credential-helper $@
+  UseHttpPath = true
