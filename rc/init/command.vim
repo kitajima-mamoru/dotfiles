@@ -10,7 +10,12 @@ function! OldfilesFilter(...)
     let wordlist = a:000
     for word in wordlist
       let replaced = substitute(word, '\.', '\\\.', "g")
-      let cmd = cmd.'filter /\c'.replaced.'[^\/]*$/ '
+      if stridx(replaced,'/')>0
+        "要リファクタ
+        let cmd = cmd.'filter /\c'.replaced
+      else
+        let cmd = cmd.'filter /\c'.replaced.'[^\/]*$/ '
+      end
     endfor
     let cmd = cmd.'oldfiles'
   end
