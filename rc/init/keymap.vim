@@ -5,7 +5,7 @@ nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <C-n> gt
 nnoremap <C-b> gT
 nnoremap <C-h> :<C-u>vertical diffsplit<Space>
-nnoremap - $
+nnoremap - $l
 nnoremap <F1> :<C-u>set list! number!<CR>
 nnoremap <F2> :set hlsearch!<CR>
 "new tabe tagjump
@@ -21,4 +21,4 @@ autocmd FileType php  nnoremap <buffer> <silent> <F7> o<ESC>0iERROR_LOG(var_expo
 autocmd FileType php  nnoremap <buffer> <silent> <F8> o<ESC>0iERROR_LOG(get_class() === get_class($this) ? "ParentClass" : "ChildClass");<ESC>
 
 autocmd FileType ruby nnoremap <buffer> <silent> <F4> o<ESC>0iLogger.new('./forDebug').debug()<ESC>i
-autocmd FileType gitrebase nnoremap <buffer>  <F4> :2,$s/pick/fix/g<CR>
+autocmd FileType gitrebase nnoremap <buffer>  <F4> :2,$s/^pick/fixup/g<CR>
