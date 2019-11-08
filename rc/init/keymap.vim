@@ -20,5 +20,6 @@ autocmd FileType php  nnoremap <buffer> <silent> <F5> o<ESC>0iERROR_LOG(__FILE__
 autocmd FileType php  nnoremap <buffer> <silent> <F7> o<ESC>0iERROR_LOG(var_export(get_class_methods(get_class($)),true));<ESC>9hi
 autocmd FileType php  nnoremap <buffer> <silent> <F8> o<ESC>0iERROR_LOG(get_class() === get_class($this) ? "ParentClass" : "ChildClass");<ESC>
 
-autocmd FileType ruby nnoremap <buffer> <silent> <F4> o<ESC>0iLogger.new('./forDebug').debug()<ESC>i
+autocmd FileType ruby nnoremap <buffer> <silent> <F4> oLogger.new('./forDebug').debug()<ESC>i
+autocmd FileType javascript nnoremap <buffer> <silent> <F4> oconsole.log()<ESC>i
 autocmd FileType gitrebase nnoremap <buffer>  <F4> :2,$s/^pick/fixup/g<CR>
