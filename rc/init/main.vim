@@ -51,5 +51,5 @@ set nocursorcolumn
 "自動補完
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-  exec "imap <expr> " . k . " pumvisible() ? '" . k . "' : '" . k . "\<C-X>\<C-P>\<C-N>'"
+  exec "imap " . k . " " . k . "<C-N><C-P>"
 endfor
