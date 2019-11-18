@@ -27,6 +27,7 @@ set noswapfile
 set clipboard=autoselect
 set virtualedit=onemore
 set viminfo='50,r~/NERD,
+set hlsearch
 syntax on
 
 autocmd StdinReadPre * let s:std_in=1
