@@ -43,10 +43,6 @@ if has('persistent_undo')
   set undofile
 endif
 
-set cursorline
-hi clear CursorLine
-hi CursorLineNr term=bold cterm=NONE ctermfg=10 ctermbg=15
-set nocursorcolumn
 
 
 "自動補完
@@ -54,3 +50,17 @@ set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
   exec "imap " . k . " " . k . "<C-N><C-P>"
 endfor
+set nocursorcolumn
+
+set cursorline
+hi clear CursorLine
+hi CursorLineNr term=bold cterm=NONE ctermfg=0 ctermbg=3
+
+" インサートモードに入った時にカーソル行(列)の色を変更する
+augroup vimrc_change_cursorline_color
+  autocmd!
+  " インサートモードに入った時にカーソル行の色をブルーグリーンにする
+  autocmd InsertEnter * set noignorecase " | highlight CursorLine ctermbg=24
+  " インサートモードを抜けた時にカーソル行の色を黒に近いダークグレーにする
+  autocmd InsertLeave * set ignorecase " | highlight CursorLine ctermbg=235 
+augroup END
