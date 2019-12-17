@@ -8,7 +8,6 @@ nnoremap <C-b> gT
 nnoremap <C-h> :<C-u>vertical diffsplit<Space>
 nnoremap - $l
 nnoremap <F1> :<C-u>set list! number!<CR>
-nnoremap <F2> :set hlsearch!<CR>
 "new tabe tagjump
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <F11> :source ~/.vim/.session

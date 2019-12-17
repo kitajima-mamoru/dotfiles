@@ -2,22 +2,19 @@
 :command! V tabe ~/.vim/rc
 :command! -nargs=* O call OldfilesFilter(<f-args>)
 function! OldfilesFilter(...)
-  tabe
   if a:0==0
-    let cmd = 'browse filter! /\.git/ oldfiles'
+    let cmd = 'filter! /\.git'
   else
-    let cmd = 'browse '
+    let cmd = 'filter /'
     let wordlist = a:000
     for word in wordlist
-      let replaced = substitute(word, '\.', '\\\.', "g")
-      if stridx(replaced,'/')>0
-        "要リファクタ
-        let cmd = cmd.'filter /\c'.replaced
-      else
-        let cmd = cmd.'filter /\c'.replaced.'[^\/]*$/ '
-      end
+      ".を\.にするために\.を\\\.に変える
+      "/を\/にするために\/を\\/に変える
+      let replaced = substitute(substitute(word, '\.', '\\\.', "g"), '\/', '\\/', "g")
+      let cmd = cmd.replaced.'.*'
     endfor
-    let cmd = cmd.'oldfiles'
   end
+  let cmd = cmd.'/ browse oldfiles'
+  tabe
   execute(cmd)
 endfunction

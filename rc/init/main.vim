@@ -26,7 +26,7 @@ set fileencodings=utf-8,cp932,euc-jp,sjis
 set noswapfile
 set clipboard=autoselect
 set virtualedit=onemore
-set viminfo='50,r~/NERD,
+set viminfo='100,r~/NERD,
 set hlsearch
 syntax on
 
