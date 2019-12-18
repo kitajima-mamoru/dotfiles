@@ -5,7 +5,7 @@ function! OldfilesFilter(...)
   if a:0==0
     let cmd = 'filter! /\.git'
   else
-    let cmd = 'filter /'
+    let cmd = 'filter /\c'
     let wordlist = a:000
     for word in wordlist
       ".を\.にするために\.を\\\.に変える
