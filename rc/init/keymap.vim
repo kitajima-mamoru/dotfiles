@@ -24,3 +24,5 @@ autocmd FileType ruby nnoremap <buffer> <silent> <F4> oLogger.new('./forDebug').
 autocmd FileType sh   nnoremap <buffer> <silent> <F4> oecho 
 autocmd FileType javascript nnoremap <buffer> <silent> <F4> oconsole.log()<ESC>i
 autocmd FileType gitrebase nnoremap <buffer>  <F4> :<C-u>2,$s/^pick/fixup/g<CR>
+
+autocmd FileType json nnoremap <buffer> <silent> <Space>i. :%!jq '.'<CR>
