@@ -13,7 +13,7 @@ alias ll='ls -al'
 alias :q='exit'
 alias :g='grep -r --exclude=tags'
 alias :gi='grep -ri --exclude=tags'
-alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|- \1/;s/\/[^/|]*/|  /g'"
+#alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|- \1/;s/\/[^/|]*/|  /g'"
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'

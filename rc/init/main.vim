@@ -51,10 +51,7 @@ for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
   exec "imap " . k . " " . k . "<C-N><C-P>"
 endfor
 set nocursorcolumn
-
-set cursorline
-hi clear CursorLine
-hi CursorLineNr term=bold cterm=NONE ctermfg=0 ctermbg=3
+set nocursorline
 
 " インサートモードに入った時にカーソル行(列)の色を変更する
 augroup vimrc_change_cursorline_color

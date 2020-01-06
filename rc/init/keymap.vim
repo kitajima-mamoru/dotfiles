@@ -26,3 +26,4 @@ autocmd FileType javascript nnoremap <buffer> <silent> <F4> oconsole.log()<ESC>i
 autocmd FileType gitrebase nnoremap <buffer>  <F4> :<C-u>2,$s/^pick/fixup/g<CR>
 
 autocmd FileType json nnoremap <buffer> <silent> <Space>i. :%!jq '.'<CR>
+nnoremap <Space>n. :%s/^/\=line('.') . ': '/<CR>
