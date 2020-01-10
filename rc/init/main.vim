@@ -52,6 +52,7 @@ for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
 endfor
 set nocursorcolumn
 set nocursorline
+hi clear CursorLine
 
 " インサートモードに入った時にカーソル行(列)の色を変更する
 augroup vimrc_change_cursorline_color
