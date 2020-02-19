@@ -30,6 +30,8 @@ set viminfo='100,r~/NERD,
 set hlsearch
 syntax on
 
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
+
 autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | source ~/.vim/.session | source $HOME/.vim/vimrc |endif
 autocmd FileType php  setlocal tabstop=4 softtabstop=4 shiftwidth=4

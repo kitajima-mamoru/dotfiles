@@ -22,7 +22,7 @@ for f in .??*; do
   [ "$f" = ".gitconfig.local.template" ] && continue
   [ "$f" = ".require_oh-my-zsh" ] && continue
   [ "$f" = ".gitmodules" ] && continue
-  
+
   ln -snfv $THIS_DIR/"$f" ~/$f
 done
 set -x
@@ -56,14 +56,14 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 set +x
 
 if [ ! $# -ne 0 ]; then
-cat << END
+  cat << END
 
 **************************************************
 FINISHED! bye.(exclude ~/.vim/bundle)
 **************************************************
 
 END
-  exit 1
+exit 1
 fi
 
 if [ ! -e ~/.vim/syntax/jinja.vim ]; then
@@ -74,29 +74,33 @@ if [ ! -e ~/.vim/syntax/twig.vim ]; then
   wget -O ~/.vim/syntax/twig.vim http://www.vim.org/scripts/download_script.php?src_id=6961
 fi
 
+if [ ! -e ~/.vim/syntax/typescript.vim ]; then
+  curl https://raw.githubusercontent.com/leafgarland/typescript-vim/master/syntax/typescript.vim > ~/.vim/syntax/typescript.vim
+fi
+
 
 if [ -e ~/.vim/bundle/unite ]; then
-        rm ~/.vim/bundle/unite -rf
+  rm ~/.vim/bundle/unite -rf
 fi
 git clone git@github.com:Shougo/unite.vim.git ~/.vim/bundle/unite
 
 if [ -e ~/.vim/bundle/nerdtree ]; then
-        rm ~/.vim/bundle/nerdtree -rf
+  rm ~/.vim/bundle/nerdtree -rf
 fi
 git clone git@github.com:scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
 if [ -e ~/.vim/bundle/vim-colorschemes ]; then
-        rm ~/.vim/bundle/vim-colorschemes -rf
+  rm ~/.vim/bundle/vim-colorschemes -rf
 fi
 git clone git@github.com:flazz/vim-colorschemes.git ~/.vim/bundle/vim-colorschemes
 
 if [ -e ~/.vim/bundle/winresizer ]; then
-        rm ~/.vim/bundle/winresizer -rf
+  rm ~/.vim/bundle/winresizer -rf
 fi
 git clone git@github.com:simeji/winresizer.git ~/.vim/bundle/winresizer
 
 if [ -e ~/.vim/bundle/unite-colorschemes ]; then
-        rm ~/.vim/bundle/unite-colorschemes -rf
+  rm ~/.vim/bundle/unite-colorschemes -rf
 fi
 git clone git@github.com:ujihisa/unite-colorscheme.git ~/.vim/bundle/unite-colorschemes
 
