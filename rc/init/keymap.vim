@@ -10,6 +10,8 @@ nnoremap - $l
 nnoremap <F1> :<C-u>set list! number!<CR>
 "new tabe tagjump
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+nnoremap <Space>cc. :<C-u>%s/_\(.\)/\u\1/gI
+nnoremap <Space>sc. :<C-u>%s/\(\s[a-z]\+\)\([A-Z]\)/\1_\l\2/gI
 nnoremap <F11> :source ~/.vim/.session
 nnoremap <F12> :mks! ~/.vim/.session
 nnoremap g< :<C-u>cprevious<CR>   "前へ
