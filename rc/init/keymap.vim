@@ -5,7 +5,7 @@ nnoremap <Space>c. :Unite -auto-preview colorscheme<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <C-n> gt
 nnoremap <C-b> gT
-nnoremap <C-h> :<C-u>vertical diffsplit<Space>
+nnoremap <C-h> :<C-u>vertical diffsplit %:h
 nnoremap <F1> :<C-u>set list! number!<CR>
 "new tabe tagjump
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
