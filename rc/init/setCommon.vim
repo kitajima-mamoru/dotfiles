@@ -1,5 +1,3 @@
-call SetCommon()
-
 function! SetCommon()
   let targets=[ 
         \'autoindent',
@@ -21,3 +19,5 @@ function! SetCommon()
   endfor
   execute(cmd)
 endfunction
+call SetCommon()
+
