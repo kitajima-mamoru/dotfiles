@@ -1,3 +1,6 @@
+" 全角文字を使う場合以下の表記が必要
+scriptencoding utf-8
+
 "if 0 | endif
 
 "if &compatible
@@ -15,8 +18,8 @@ execute pathogen#infect()
 
 "自動補完
 set completeopt=menuone
-for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
-  exec "imap " . k . " " . k . "<C-N><C-P>"
+for k in split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_','\zs')
+  exec 'imap ' . k . ' ' . k . '<C-N><C-P>'
 endfor
 hi clear CursorLine
 

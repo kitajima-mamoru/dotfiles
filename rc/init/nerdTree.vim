@@ -17,7 +17,7 @@ call NERDTreeHighlightFile('rb',     'Red',     'none', 'red','#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500','#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff','#151515')
 
-augroup myvimrc
+augroup vimrc_nerdtree
   autocmd!
+  autocmd FileType nerdtree nnoremap <buffer> b :<C-u>Bookmark
 augroup END
-autocmd FileType nerdtree nnoremap <buffer> b :<C-u>Bookmark
