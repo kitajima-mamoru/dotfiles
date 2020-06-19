@@ -2,12 +2,21 @@
 
 set -u
 
+# 無ければ作る
+function makeDirectory() {
+  [ ! -e $1 ] && mkdir $1
+}
+
+# 有れば削除
+function deleteDirectory() {
+  [ -e $1 ] && rm $1 -rf
+}
+
 # 実行場所のディレクトリを取得
 THIS_DIR=$(cd $(dirname $0); pwd)
 
 cd $THIS_DIR
 echo $THIS_DIR
-
 
 cd $(git rev-parse --show-toplevel)
 
@@ -22,32 +31,20 @@ for f in .??*; do
   [ "$f" = ".gitconfig.local.template" ] && continue
   [ "$f" = ".require_oh-my-zsh" ] && continue
   [ "$f" = ".gitmodules" ] && continue
+  [ "$f" = ".vintrc.yaml" ] && continue
 
   ln -snfv $THIS_DIR/"$f" ~/$f
 done
 set -x
-if [ ! -e ~/.vim ]; then
-  mkdir ~/.vim
-fi
+makeDirectory ~/.vim
+makeDirectory ~/.vim/rc
+makeDirectory ~/.vim/rc/pri
+makeDirectory ~/.vim/undo
+makeDirectory ~/.vim/syntax
+makeDirectory ~/.vim/session
+
+deleteDirectory ~/.vim/rc/init
 ln -snfv $THIS_DIR/vimrc ~/.vim/vimrc
-if [ ! -e ~/.vim/rc ]; then
-  mkdir ~/.vim/rc
-fi
-if [ ! -e ~/.vim/rc/pri ]; then
-  mkdir ~/.vim/rc/pri
-fi
-if [ ! -e ~/.vim/undo ]; then
-  mkdir ~/.vim/undo
-fi
-if [ ! -e ~/.vim/syntax ]; then
-  mkdir ~/.vim/syntax
-fi
-if [ ! -e ~/.vim/.session ]; then
-  touch ~/.vim/.session
-fi
-if [ -e ~/.vim/rc/init ]; then
-  rm ~/.vim/rc/init -rf
-fi
 ln -snfv $THIS_DIR/rc/init ~/.vim/rc/
 cp $THIS_DIR/rc/pri ~/.vim/rc/ -rf
 #各種バンドルインストール
@@ -79,29 +76,19 @@ if [ ! -e ~/.vim/syntax/typescript.vim ]; then
 fi
 
 
-if [ -e ~/.vim/bundle/unite ]; then
-  rm ~/.vim/bundle/unite -rf
-fi
+deleteDirectory ~/.vim/bundle/unite
 git clone git@github.com:Shougo/unite.vim.git ~/.vim/bundle/unite
 
-if [ -e ~/.vim/bundle/nerdtree ]; then
-  rm ~/.vim/bundle/nerdtree -rf
-fi
+deleteDirectory ~/.vim/bundle/nerdtree
 git clone git@github.com:scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
-if [ -e ~/.vim/bundle/vim-colorschemes ]; then
-  rm ~/.vim/bundle/vim-colorschemes -rf
-fi
+deleteDirectory ~/.vim/bundle/vim-colorschemes
 git clone git@github.com:flazz/vim-colorschemes.git ~/.vim/bundle/vim-colorschemes
 
-if [ -e ~/.vim/bundle/winresizer ]; then
-  rm ~/.vim/bundle/winresizer -rf
-fi
+deleteDirectory ~/.vim/bundle/winresizer
 git clone git@github.com:simeji/winresizer.git ~/.vim/bundle/winresizer
 
-if [ -e ~/.vim/bundle/unite-colorschemes ]; then
-  rm ~/.vim/bundle/unite-colorschemes -rf
-fi
+deleteDirectory ~/.vim/bundle/unite-colorschemes
 git clone git@github.com:ujihisa/unite-colorscheme.git ~/.vim/bundle/unite-colorschemes
 
 curl --create-dirs -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
