@@ -23,12 +23,10 @@ for k in split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_','\zs')
 endfor
 hi clear CursorLine
 
-" インサートモードに入った時にカーソル行(列)の色を変更する
+" インサートモードに入った時に大文字小文字を区別する
 augroup vimrc_change_cursorline_color
   autocmd!
-  " インサートモードに入った時にカーソル行の色をブルーグリーンにする
-  autocmd InsertEnter * set noignorecase " | highlight CursorLine ctermbg=24
-  " インサートモードを抜けた時にカーソル行の色を黒に近いダークグレーにする
-  autocmd InsertLeave * set ignorecase " | highlight CursorLine ctermbg=235 
+  autocmd InsertEnter * set noignorecase
+  autocmd InsertLeave * set ignorecase
 augroup END
 
