@@ -15,7 +15,7 @@ nnoremap g> :<C-u>cnext<CR>
 augroup vimrc_keymap
   autocmd!
   autocmd FileType php  nnoremap <buffer> <silent> <F4> o<ESC>0iERROR_LOG(var_export($,true));<ESC>7hi
-  autocmd FileType php  nnoremap <buffer> <silent> <F5> o<ESC>0iERROR_LOG(__FILE__.":".__FUNCTION__.":".__CLASS__.":L".__LINE__);<ESC>
+  autocmd FileType php  nnoremap <buffer> <silent> <F5> o<ESC>0iERROR_LOG(__FILE__.':'.__FUNCTION__.':'.__CLASS__.':L'.__LINE__);<ESC>
 
   autocmd FileType ruby nnoremap <buffer> <silent> <F4> oLogger.new('./forDebug').debug()<ESC>i
   autocmd FileType sh   nnoremap <buffer> <silent> <F4> oecho 
