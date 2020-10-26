@@ -10,7 +10,6 @@
   po = push origin
   poh = push origin HEAD
   pfoh = push -f origin HEAD
-  pp = pull --prune
   b = branch
   rh = reset --hard
   rs = reset --soft HEAD~1
@@ -30,3 +29,5 @@
 [credential]
   helper = !aws --region us-east-1 --profile for_codecommit codecommit credential-helper $@
   UseHttpPath = true
+[fetch]
+  prune = true
