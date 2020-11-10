@@ -32,6 +32,7 @@ augroup vimrc_setopt_filetype
   autocmd!
   autocmd BufRead,BufNewFile *.ts        set filetype=typescript
   autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+  autocmd BufRead,BufNewFile *.pu        set filetype=plantuml
 augroup END
 
 augroup vimrc_setopt_set_tab_width

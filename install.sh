@@ -75,6 +75,9 @@ if [ ! -e ~/.vim/syntax/typescript.vim ]; then
   curl https://raw.githubusercontent.com/leafgarland/typescript-vim/master/syntax/typescript.vim > ~/.vim/syntax/typescript.vim
 fi
 
+if [ ! -e ~/.vim/syntax/plantuml.vim ]; then
+  curl https://raw.githubusercontent.com/aklt/plantuml-syntax/master/syntax/plantuml.vim > ~/.vim/syntax/plantuml.vim
+fi
 
 deleteDirectory ~/.vim/bundle/unite
 git clone git@github.com:Shougo/unite.vim.git ~/.vim/bundle/unite
