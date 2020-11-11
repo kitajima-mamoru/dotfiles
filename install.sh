@@ -24,6 +24,7 @@ git submodule init
 git submodule update
 cd -
 
+cd src
 echo "start setup..."
 for f in .??*; do
   #skip list
@@ -33,7 +34,7 @@ for f in .??*; do
   [ "$f" = ".gitmodules" ] && continue
   [ "$f" = ".vintrc.yaml" ] && continue
 
-  ln -snfv $THIS_DIR/"$f" ~/$f
+  ln -snfv $THIS_DIR/src/"$f" ~/$f
 done
 set -x
 makeDirectory ~/.vim
