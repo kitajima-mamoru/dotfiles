@@ -24,8 +24,8 @@ git submodule init
 git submodule update
 cd -
 
-cd src
 echo "start setup..."
+cd src
 for f in .??*; do
   #skip list
   [ "$f" = ".git" ] && continue
@@ -36,6 +36,8 @@ for f in .??*; do
 
   ln -snfv $THIS_DIR/src/"$f" ~/$f
 done
+cd -
+
 set -x
 makeDirectory ~/.vim
 makeDirectory ~/.vim/rc
