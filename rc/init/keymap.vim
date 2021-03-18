@@ -18,6 +18,7 @@ augroup vimrc_keymap
   autocmd FileType php  nnoremap <buffer> <silent> <F5> o<ESC>0iERROR_LOG(__FILE__.':'.__FUNCTION__.':'.__CLASS__.':L'.__LINE__);<ESC>
 
   autocmd FileType ruby nnoremap <buffer> <silent> <F4> oLogger.new('./forDebug').debug()<ESC>i
+  autocmd FileType ruby nnoremap <buffer> <silent> <F5> op "#{__FILE__}#{__LINE__}"<ESC>
   autocmd FileType sh   nnoremap <buffer> <silent> <F4> oecho 
   autocmd FileType javascript nnoremap <buffer> <silent> <F4> oconsole.log()<ESC>i
   autocmd FileType gitrebase nnoremap <buffer> <F4> :<C-u>2,$s/^pick/fixup/g<CR>
