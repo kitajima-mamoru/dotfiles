@@ -2,6 +2,7 @@
 scriptencoding utf-8
 
 " gf設定
+set path+=,,src/,
 " 見つからければ先頭のスラッシュを削除する
 set includeexpr=substitute(v:fname,'^\\/','','')
 
