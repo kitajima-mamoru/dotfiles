@@ -10,6 +10,7 @@ alias ls='ls --color=auto'
 alias vi='vim'
 alias grep='grep --color=auto'
 alias ll='ls -al'
+alias l='ls -l'
 alias :q='exit'
 #alias tree="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|- \1/;s/\/[^/|]*/|  /g'"
 
