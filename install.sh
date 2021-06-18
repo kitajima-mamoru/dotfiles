@@ -27,30 +27,19 @@ cd -
 echo "start setup..."
 cd src
 for f in .??*; do
-  #skip list
-  [ "$f" = ".git" ] && continue
-  [ "$f" = ".gitconfig.local.template" ] && continue
-  [ "$f" = ".require_oh-my-zsh" ] && continue
-  [ "$f" = ".gitmodules" ] && continue
-  [ "$f" = ".vintrc.yaml" ] && continue
-
   ln -snfv $THIS_DIR/src/"$f" ~/$f
 done
 cd -
 
 set -x
-makeDirectory ~/.vim
-makeDirectory ~/.vim/rc
-makeDirectory ~/.vim/rc/pri
-makeDirectory ~/.vim/undo
-makeDirectory ~/.vim/syntax
-makeDirectory ~/.vim/session
+for dirname in ~/.vim ~/.vim/rc ~/.vim/rc/pri ~/.vim/undo ~/.vim/syntax ~/.vim/session; do
+ makeDirectory $dirname
+done
 
 deleteDirectory ~/.vim/rc/init
 ln -snfv $THIS_DIR/vimrc ~/.vim/vimrc
 ln -snfv $THIS_DIR/rc/init ~/.vim/rc/
 cp $THIS_DIR/rc/pri ~/.vim/rc/ -rf
-#各種バンドルインストール
 
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 set +x
@@ -66,6 +55,7 @@ END
 exit 1
 fi
 
+#各種バンドルインストール
 if [ ! -e ~/.vim/syntax/jinja.vim ]; then
   wget -O ~/.vim/syntax/jinja.vim http://www.vim.org/scripts/download_script.php?src_id=8666
 fi

@@ -7,7 +7,7 @@ function! SetCommon()
         \'ignorecase',
         \'list',
         \'nocursorcolumn',
-        \'nocursorline',
+        \'cursorline',
         \'noruler',
         \'noswapfile',
         \'nowrap',
