@@ -3,9 +3,9 @@ if [ -f ~/.bashrcp ]; then
   . ~/.bashrcp
 fi
 
-# User specific environment and startup programs
+# ホームディレクトリ下を優先する
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
+PATH=$HOME/bin:$PATH
 
 export PATH
 
