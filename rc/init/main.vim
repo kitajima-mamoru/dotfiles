@@ -1,12 +1,6 @@
 " 全角文字を使う場合以下の表記が必要
 scriptencoding utf-8
 
-"if 0 | endif
-
-"if &compatible
-"  set nocompatible
-"endif
-
 colorscheme 3dglasses
 filetype plugin indent on
 
