@@ -4,9 +4,6 @@ scriptencoding utf-8
 colorscheme 3dglasses
 filetype plugin indent on
 
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | source ~/.vim/.session | source $HOME/.vim/vimrc |endif
-
 syntax on
 execute pathogen#infect()
 
