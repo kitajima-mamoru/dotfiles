@@ -32,3 +32,7 @@
   UseHttpPath = true
 [fetch]
   prune = true
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = true
