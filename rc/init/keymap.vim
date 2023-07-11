@@ -1,6 +1,6 @@
 nnoremap <Space>s. :<C-u>source $HOME/.vim/vimrc<CR>
 nnoremap <Space>n. :%s/^/\=line('.') . ': '/<CR>
-nnoremap <Space>j. :<C-u>setf=javascript<CR>:filetype indent on<CR> :%s/\n//g<CR> :%s/\s//g<CR> :%s/{/{\r/g<CR> :%s/}/\r}/g<CR> :%s/\[/\[\r/g<CR> :%s/\]/\r\]/g<CR> :%s/,/,\r/g<CR>:normal gg=G<CR>:noh<CR>
+nnoremap <Space>j. :<C-u>setf json<CR>:filetype indent on<CR> :%s/\n//ge<CR> :%s/\s//ge<CR> :%s/{/{\r/ge<CR> :%s/}/\r}/ge<CR> :%s/\[/\[\r/ge<CR> :%s/\]/\r\]/ge<CR> :%s/,/,\r/ge<CR>:normal gg=G<CR>:noh<CR>
 nnoremap <Space>c. :Unite -auto-preview colorscheme<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <C-h> :<C-u>vertical diffsplit %:h
@@ -22,6 +22,6 @@ augroup vimrc_keymap
   autocmd FileType ruby nnoremap <buffer> <silent> <F5> op "#{__FILE__}#{__LINE__}"<ESC>
   autocmd FileType sh   nnoremap <buffer> <silent> <F4> oecho 
   autocmd FileType javascript nnoremap <buffer> <silent> <F4> oconsole.log();<ESC>hi
-  autocmd FileType gitrebase nnoremap <buffer> <F4> :<C-u>2,$s/^pick/fixup/g<CR>
+  autocmd FileType gitrebase nnoremap <buffer> <F4> :<C-u>2,$s/^pick/fixup/ge<CR>
   autocmd FileType json nnoremap <buffer> <silent> <F4> :%!jq '.'<CR>
 augroup END
