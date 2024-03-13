@@ -8,11 +8,11 @@ syntax on
 execute pathogen#infect()
 
 "自動補完
-set completeopt=menuone
-for k in split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_','\zs')
-  exec 'imap ' . k . ' ' . k . '<C-N><C-P>'
-endfor
-hi clear CursorLine
+" set completeopt=menuone
+" for k in split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_','\zs')
+"   exec 'imap ' . k . ' ' . k . '<C-N><C-P>'
+" endfor
+" hi clear CursorLine
 
 " インサートモードに入った時に大文字小文字を区別する
 augroup vimrc_change_cursorline_color
