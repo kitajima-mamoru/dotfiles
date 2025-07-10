@@ -28,7 +28,7 @@
   excludesfile = ~/.gitignorep
   editor = vim
 [credential]
-  helper = !aws --region us-east-1 --profile for_codecommit codecommit credential-helper $@
+  helper = !aws --region us-east-1 codecommit credential-helper $@
   UseHttpPath = true
 [fetch]
   prune = true
@@ -43,5 +43,7 @@
   patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
   allowed = AKIAIOSFODNN7EXAMPLE
   allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+  allowed = 692179382872
+  allowed = 919724784271
 [init]
   templatedir = ~/.git-templates/git-secrets
