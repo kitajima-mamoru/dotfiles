@@ -20,16 +20,20 @@
   ddns = diff develop --name-status
   bas = for-each-ref --format='%(authordate) %(refname)' --sort=-committerdate refs/heads refs/remotes
 [user]
-  name = kitajima
-  email = email
+	name = kitajima
+	email = kitajimamamoru@lifull.com
+	signingkey = 1C4355E9B254424D
 
 #git管理しないファイルを指定するファイル
 [core]
   excludesfile = ~/.gitignorep
   editor = vim
 [credential]
-  helper = !aws --region us-east-1 codecommit credential-helper $@
-  UseHttpPath = true
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true
+[credential "https://git-codecommit.us-east-1.amazonaws.com"]
+	helper = !aws codecommit credential-helper --profile satei-dev $@
+	UseHttpPath = true
 [fetch]
   prune = true
 [diff]
@@ -46,4 +50,6 @@
   allowed = 692179382872
   allowed = 919724784271
 [init]
-  templatedir = ~/.git-templates/git-secrets
+	templatedir = ~/.git-templates/git-secrets
+[commit]
+	gpgsign = true
